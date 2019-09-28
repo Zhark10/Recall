@@ -2,19 +2,25 @@ import React from 'react';
 import {Text, TouchableOpacity} from 'react-native';
 import styles from "./play-button-styles";
 
-type Props = {}
+type Props = {
+    onClick: () => void,
+}
 
-const PlayButton = (props: Props) => {
+const PlayButton = ({onClick}: Props) => {
+
     return (
         <TouchableOpacity
             style={styles.button}
-            // onPress={this.onPress}
+            onPress={onClick}
         >
-            <Text>Играть</Text>
+            <Text style={styles.title}>Играть</Text>
         </TouchableOpacity>
 
     )
 };
 
+// PlayButton.defaultProps = {
+//     navigation: {},
+// };
 
 export default React.memo(PlayButton);
